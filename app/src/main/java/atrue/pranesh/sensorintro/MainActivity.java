@@ -1,5 +1,6 @@
 package atrue.pranesh.sensorintro;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+
+import atrue.pranesh.sensorintro.compass.Myactivity;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
     SensorManager sensorManager;
@@ -44,11 +47,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         btnCompass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, Myactivity.class);
+                startActivity(intent);
             }
         });
 
-     
+
     }
 
     SensorEventListener sensorEventListener = new SensorEventListener() {
